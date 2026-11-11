@@ -1,0 +1,610 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* Styles généraux */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #FFFFFF;
+    color: #151515;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Barre de navigation */
+.navbar {
+    background-color: #111111;
+    color: #FFFFFF;
+    padding: 22px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.navbar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.navbar-links a {
+    color: #D0D0D0;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: #FFFFFF;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navbar-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+
+/* ========================================
+   PAGE D'ACCUEIL — HERO
+   ======================================== */
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    padding: 100px 8%;
+
+    /* Photo en couleur avec un voile sombre */
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.50) 55%,
+            rgba(0, 0, 0, 0.25) 100%
+        ),
+        url("/assets/hero-alimentation.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 760px;
+    color: #FFFFFF;
+}
+
+.hero-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin: 0 0 28px;
+}
+
+.hero-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 620px;
+    margin-bottom: 36px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: #111111;
+    padding: 16px 26px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.hero-button:hover {
+    background-color: #E8E8E8;
+}
+
+/* Adaptation aux petits écrans */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 580px;
+        padding: 70px 6%;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+}
+
+
+/* ========================================
+   PAGE D'ACCUEIL — SECTION EXPLORATION
+   ======================================== */
+
+.explore-section {
+    padding: 110px 8%;
+    background-color: #FFFFFF;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #777777;
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 3vw, 42px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin: 0 0 16px;
+}
+
+.section-description {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #666666;
+    margin: 0 0 48px;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.explore-card {
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    padding: 30px 24px;
+    min-height: 220px;
+    background-color: #FFFFFF;
+}
+
+.card-number {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #888888;
+    margin-bottom: 38px;
+}
+
+.explore-card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 14px;
+}
+
+.explore-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666666;
+    margin: 0;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .explore-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .explore-section {
+        padding: 70px 6%;
+    }
+
+    .explore-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================================
+   PAGE D'ACCUEIL — À PROPOS DES DONNÉES
+   ======================================== */
+
+.about-section {
+    padding: 100px 8%;
+    background-color: #F7F7F5;
+}
+
+.about-content {
+    max-width: 820px;
+}
+
+.about-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444444;
+    margin: 0 0 22px;
+}
+
+.about-note {
+    margin-top: 36px;
+    padding: 20px 24px;
+    border-left: 3px solid #111111;
+    background-color: #FFFFFF;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 70px 6%;
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================
+   PAGE D'ACCUEIL — BANDEAU FINAL
+   ======================================== */
+
+.cta-section {
+    margin: 80px 8%;
+    padding: 90px 7%;
+    background-color: #111111;
+    color: #FFFFFF;
+    border-radius: 6px;
+}
+
+.cta-content {
+    max-width: 760px;
+}
+
+.cta-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    margin: 0 0 24px;
+}
+
+.cta-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #D0D0D0;
+    margin: 0 0 36px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 26px;
+    background-color: #FFFFFF;
+    color: #111111;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #E8E8E8;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .cta-section {
+        margin: 50px 6%;
+        padding: 65px 8%;
+    }
+
+    .cta-description {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================
+   FOOTER COMMUN
+   ======================================== */
+
+.footer {
+    background-color: #111111;
+    color: #FFFFFF;
+    padding: 28px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.footer-description {
+    font-size: 13px;
+    color: #AAAAAA;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
+
+
+/* ========================================
+   PAGES ANALYTIQUES — STRUCTURE COMMUNE
+   ======================================== */
+
+.analysis-page {
+    background-color: #FFFFFF;
+    min-height: 80vh;
+}
+
+.analysis-header {
+    padding: 90px 8% 50px;
+    max-width: 1200px;
+}
+
+.analysis-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(36px, 4vw, 58px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    margin: 0 0 24px;
+    color: #111111;
+}
+
+.analysis-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #666666;
+    max-width: 720px;
+    margin: 0;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .analysis-header {
+        padding: 60px 6% 35px;
+    }
+
+    .analysis-description {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================
+   PAGES ANALYTIQUES — FILTRES
+   ======================================== */
+
+.analysis-filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: end;
+
+    margin: 0 8% 50px;
+    padding: 30px;
+
+    background-color: #F7F7F5;
+    border: 1px solid #E8E8E8;
+    border-radius: 6px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.filter-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Curseur de période */
+.analysis-filters .rc-slider-track {
+    background-color: #111111;
+}
+
+.analysis-filters .rc-slider-handle {
+    border: 2px solid #111111;
+    background-color: #FFFFFF;
+    opacity: 1;
+}
+
+.analysis-filters .rc-slider-handle:hover,
+.analysis-filters .rc-slider-handle:focus {
+    border-color: #555555;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.analysis-filters .rc-slider-dot-active {
+    border-color: #111111;
+}
+
+/* Menu déroulant */
+.analysis-filters .Select-control {
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+.analysis-filters .Select-value-label {
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #111111 !important;
+}
+
+/* Tablette et mobile */
+@media (max-width: 768px) {
+    .analysis-filters {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin: 0 6% 40px;
+        padding: 24px;
+    }
+}
+
+
+/* ========================================
+   PAGES ANALYTIQUES — GRAPHIQUES
+   ======================================== */
+
+.chart-section {
+    margin: 0 8% 32px;
+    padding: 32px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+}
+
+.chart-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #111111;
+    margin: 0 0 20px;
+}
+
+.chart-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666666;
+    margin: -8px 0 24px;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    .chart-section {
+        margin: 0 6% 24px;
+        padding: 20px;
+    }
+
+    .chart-title {
+        font-size: 21px;
+    }
+}
+
+
+/* ========================================
+   PAGES ANALYTIQUES — BLOC À RETENIR
+   ======================================== */
+
+.insight-section {
+    margin: 40px 8% 90px;
+    padding: 40px;
+    background-color: #F7F7F5;
+    border: 1px solid #E8E8E8;
+    border-radius: 6px;
+}
+
+.insight-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #111111;
+    margin: 0 0 20px;
+    max-width: 800px;
+}
+
+.insight-description {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444444;
+    max-width: 850px;
+    margin: 0 0 24px;
+}
+
+.insight-note {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #777777;
+    border-top: 1px solid #DDDDDD;
+    padding-top: 20px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .insight-section {
+        margin: 30px 6% 60px;
+        padding: 25px;
+    }
+
+    .insight-description {
+        font-size: 16px;
+    }
+}
+
+
+/* ========================================
+   PAGE PRODUITS — DISPOSITION DES FILTRES
+   ======================================== */
+
+.product-filters {
+    grid-template-columns: 1fr 1fr 1.5fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .product-filters {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
